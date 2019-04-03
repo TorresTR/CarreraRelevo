@@ -1,31 +1,53 @@
 package com.udec.relevo;
 
 
+/**
+ * Se importan als variables en la clase principal, para podert trabajar con ellas
+ */
 import static com.udec.relevo.Logica.vectorEquipo1;
 import static com.udec.relevo.Logica.pasosEquipo1;
-import static com.udec.relevo.Logica.notifica;
+import static com.udec.relevo.Logica.imprimir;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
 
 /**
- *
+ * Clase que se encarga de manejar la clase de corredor1
  * @author David
  */
 public class Corredor1 extends Thread {
     
+    /**
+     * Guarda el color del equipo al cual pertenece el corredor 
+     */
     private String color;
 
+    /**
+     * variable Integer en la cual se almacena los pasos del equipo
+     */
     private Integer dat;
     
-    boolean conti = true;
+    /**
+     * variable usuada para romper el ciclo while del hilo
+     */
+    private boolean conti = true;
     
+    /**
+     * Contructor donde Recibe la variable de pasos del equipo uno que por defecto es 0
+     * y se inicializa el color del equipo el cual es un ddistintivo para cada equipo
+     * @param pasos = varibale Integer estatica que se envia al contructor y se inicializa
+     */
     public Corredor1(Integer pasos) {
         this.color = "Amarrillo";
         this.dat=pasos;
     }
 
+    /**
+     * metodo run el cual inicializa las pocisiones en las que se ubica cada persona del equipo
+     * y hace un recorrido en el cual al llegar a su tope o la pocision maxima del corredor A este 
+     * llama a un objeto syncronized para dar su respectivo .notify();
+     */
     @Override
     public void run() {
         vectorEquipo1[0]='A';
@@ -105,27 +127,27 @@ public class Corredor1 extends Thread {
         }//while
     }
 
-   
-    public  void imprimir(char [] vector){
-        System.out.print("\n");
-        for (int i = 0; i < 50; i++) {
-            System.out.print(vector[i]);
-        }//for
-        System.out.print("\n");
-    }//imprimir
-    
-    public void detener(){
-        conti=false;
-    }
-    
+    /**
+     * Retorna el color que tiene asignado el corredor del equipo
+     * @return 
+     */
     public String getColor() {
         return color;
     }
 
+    /**
+     * Asigna un color al corredor del equipo
+     * @param color 
+     */
     public void setColor(String color) {
         this.color = color;
     }
     
+    /**
+     * Invoca el metodo generar numero de la calse utilizarios ek cual es un radom entre 0 - 3 con el cual se realizará
+     * el desplazamiento de los corredores
+     * @return 
+     */
     public int generaNum(){
         Utilitario ut = new Utilitario();
         int x = ut.generarNumero();
