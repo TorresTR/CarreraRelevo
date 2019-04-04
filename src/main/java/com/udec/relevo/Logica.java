@@ -117,7 +117,7 @@ public class Logica {
         
         System.out.println("\n");
         for (int i = 0; i < 50; i++) {
-            System.out.print(vector[i]);
+            System.out.print("\033[33m"+vector[i]);
         }//for
         System.out.println("\n");
     }//imprimir
@@ -130,7 +130,7 @@ public class Logica {
         
         System.out.println("\n");
         for (int i = 0; i < 50; i++) {
-            System.out.print(vector[i]);
+            System.out.print("\033[32m"+vector[i]);
         }//for
         System.out.println("\n");
     }//imprimir
@@ -143,7 +143,7 @@ public class Logica {
         
         System.out.println("\n");
         for (int i = 0; i < 50; i++) {
-            System.out.print(vector[i]);
+            System.out.print("\033[34m"+vector[i]);
         }//for
         System.out.println("\n");
     }//imprimir
