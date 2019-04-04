@@ -46,7 +46,7 @@ public class Corredor3 extends Thread {
     @Override
     public void run() {
        
-        if(dat <= 32){
+        if(pasosEquipo1 <= 31){
             try {
                 synchronized(dat){
                     dat.wait();

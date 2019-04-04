@@ -48,7 +48,7 @@ public class Corredor8 extends Thread {
      */
     @Override
     public void run() {
-         if(dat <=15){
+         if(pasosEquipo3 <=14){
                 synchronized(dat){
                     
                     try {
