@@ -37,6 +37,16 @@ public class Logica {
      Corredor3 corr3 = new Corredor3(pasosEquipo1);
      Corredor6 corr6 = new Corredor6(pasosEquipo2);
      Corredor9 corr9 = new Corredor9(pasosEquipo3);
+
+     /**
+      * contructor que se incia para las pruebas
+      * @param x 
+      */
+    public Logica(int x) {
+    }
+     
+     
+     
     /**
      * Se llamana el emtodo a llenar, y se incian los hilos
      */    
@@ -151,7 +161,7 @@ public class Logica {
     /**
      * metodo que se encarga el vector con _ el cual sirve de pista
      */
-    private void llenar1(){
+    public void llenar1(){
         for (int i = 0; i < 50; i++) {
            vectorEquipo1[i] = '_';
         }//for
@@ -159,7 +169,7 @@ public class Logica {
     /**
      * metodo que se encarga el vector con _ el cual sirve de pista
      */
-    private void llenar2(){
+    public void llenar2(){
         for (int i = 0; i < 50; i++) {
            vectorEquipo2[i] = '_';
         }//for
@@ -167,12 +177,41 @@ public class Logica {
     /**
      * metodo que se encarga el vector con _ el cual sirve de pista
      */
-    private void llenar3(){
+    public void llenar3(){
         for (int i = 0; i < 50; i++) {
            vectorEquipo3[i] = '_';
         }//for
     
     }//llenar    
         
+    
+    /**
+     * metodo que se encarga el vector con _ el cual sirve de pista
+     */
+     public boolean llenar1Prueba(boolean x,char[] vect){
+        if(x==false){
+            if(vect.length > 0){
+                x=true;
+                return x;
+            }
+            
+        }
+        return x;
+    }//llenar
+     
+     
+     /**
+     * metodo que se encarga el vector con _ el cual sirve de pista
+     */
+    public boolean llenarPrueba(char[] vect){
+        boolean x = false;
+        for (int i = 0; i < 50; i++) {
+           vect[i] = '_';
+        }//for
+        x=true;
+        return x;
+    }//llenar    
+    
+  
     
 }
